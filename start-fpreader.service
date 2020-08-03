@@ -1,0 +1,10 @@
+[Unit]
+Description=Restart python-validity after resume
+After=suspend.target hibernate.target
+
+[Service]
+Type=simple
+ExecStart=udevadm trigger
+
+[Install]
+WantedBy=suspend.target hibernate.target
